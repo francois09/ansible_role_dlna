@@ -1,0 +1,11 @@
+---
+# Default do nothing
+dlna__install: False
+dlna__configure: False
+
+# defaults file for dlna
+dlna__default_packages:
+  - minidlna
+
+dlna__inotify: "no"
+dlna__shares: []

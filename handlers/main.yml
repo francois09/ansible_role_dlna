@@ -1,0 +1,6 @@
+---
+# handlers file for dlna
+- name: Restart minidlna
+  service:
+    name: minidlna
+    state: restarted

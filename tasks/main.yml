@@ -1,0 +1,19 @@
+---
+- name: Dlna install packages
+  apt:
+    name: "{{ dlna__default_packages }}"
+    update_cache: yes
+    state: present
+  when: dlna__install
+
+
+# Create config file
+- name: Create global config file
+  template:
+    src: etc_minidlna
+    dest: /etc/minidlna.conf
+  when:
+    - dlna__configure
+  notify:
+    - Restart minidlna
+...
